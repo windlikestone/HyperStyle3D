@@ -25,9 +25,8 @@ We recommend using anaconda to manage the python environments.
 
 The environment can be created via ```conda env create -f environment.yml```, and activated via ```conda activate hyperstyle3d```.
 
-## :running_woman: Inference
 
-### Download Models
+## Download Models
 
 # <p align="center"> Under constructions </p>
 
