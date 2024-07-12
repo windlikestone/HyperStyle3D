@@ -45,7 +45,7 @@ Put the downloaded checkpoints under ```checkpoints``` folder for inference. The
     │        └── plane
     │                 └── model_joint_denoise_rec_model770000.pt
     └── ...
-```
+
 
 # Demo
 
