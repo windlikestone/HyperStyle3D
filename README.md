@@ -23,15 +23,7 @@ We conduct all the training on NVIDIA V100-32GiB (ShapeNet, FFHQ) and NVIDIA A10
 We have test the inference codes on NVIDIA V100.
 We recommend using anaconda to manage the python environments.
 
-The environment can be created via ```conda env create -f environment_ln3diff.yml```, and activated via ```conda activate ln3diff```.
-If you want to reuse your own PyTorch environment, install the following packages in your environment:
-
-```
-# first, check whether you have installed pytorch (>=2.0) and xformer.
-conda install -c conda-forge openexr-python git
-pip install openexr lpips imageio kornia opencv-python tensorboard tqdm timm ffmpeg einops beartype imageio[ffmpeg] blobfile ninja lmdb webdataset opencv-python click torchdiffeq transformers
-pip install git+https://github.com/nupurkmr9/vision-aided-gan
-```
+The environment can be created via ```conda env create -f environment.yml```, and activated via ```conda activate hyperstyle3d```.
 
 ## :running_woman: Inference
 
