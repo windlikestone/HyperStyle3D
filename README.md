@@ -47,18 +47,21 @@ Put the downloaded checkpoints under ```checkpoints``` folder for inference. The
     └── ...
 
 
-# Demo
+# Inference
 
-In this section, we present an example to edting 3D model. First, generate the mlp texture.
-
-```
-sh run/texture.sh
-```
-
-Then, edit 3D model's texuture.
+In this section, we present an example to generate stylized results via pre-trained StyleSDF and hypernetworks.
 
 ```
-sh run/direction_edit.sh
+cd ZSSGAN
+bash generate_SDF.sh
+bash render_video_SDF_text.sh
+```
+
+# Train
+
+```bash
+cd ZSSGAN
+bash train_stylesdf.sh
 ```
 
 # Acknowledgement
