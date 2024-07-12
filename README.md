@@ -7,7 +7,7 @@
 
 
 <p align="center">
-  <img src="./assets/inference_pipeline_final.png.png"/>
+  <img src="./assets/inference_pipeline_final.png"/>
  </p>
  <p align="center">
   <img src="./assets/training_pipeline_final.png"/>
