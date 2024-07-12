@@ -1,6 +1,5 @@
-# HyperStyle3D
 
- # <p align="center">  under construction </p>
+ # <p align="center"> HyperStyle3D: Text-Guided 3D Portrait Stylization via Hypernetworks </p>
 
 #### <p align="center">[Paper](https://arxiv.org/abs/2304.09463v1) | [Project Page](https://windlikestone.github.io/HyperStyle3D-website/) </p>
 
