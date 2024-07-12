@@ -29,6 +29,8 @@ The environment can be created via ```conda env create -f environment.yml```, an
 
 ### Download Models
 
+# <p align="center"> Under constructions </p>
+
 The pretrained StyleSDF model can downloaded via [StyleSDF Repo](https://github.com/royorel/StyleSDF)
 The pre-trained hypernetworks of several example styles can be downloaded via [Google Drive](https://windlikestone.github.io/HyperStyle3D-website/).
 For training, please also download other checkpoints from [Google Drive](https://windlikestone.github.io/HyperStyle3D-website/).
