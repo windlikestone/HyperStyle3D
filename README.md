@@ -12,44 +12,62 @@
 
 # Introduction
 
-This repository contains the official implementation of Directional Texture Editing for 3D Models(ITEM3D).
-Our ITEM3D model presents an efficient solution to the challenging task of texture editing for 3D models.
-By leveraging the knowledge from diffusion models, ITEM3D is capable to optimize the texture and environment map under the guidance of text prompts. More results can be viewed on our [Project Page](https://shengqiliu1.github.io/ITEM3D/).
+This repository contains the official implementation of HyperStyle3D: Text-Guided 3D Portrait Stylization via Hypernetworks.
+Our model enables style transfer, attribute editing, shape deformation, and their overlying manipulations under the guidance of text prompts, while preserving 3D consistency. A more detailed introduction can be viewed on our [Project Page](https://windlikestone.github.io/HyperStyle3D-website/).
 
-# Installation
+## :desktop_computer: Requirements
 
-Create the environment by conda.
+NVIDIA GPUs are required for this project.
+We conduct all the training on NVIDIA RTX 3090-24GiB and NVIDIA RTX A6000-48GiB. 
+We recommend using anaconda to manage the python environments.
+
+The environment can be created via ```conda env create -f environment.yml```, and activated via ```conda activate hyperstyle3d```.
+
+## :running_woman: Inference
+
+### Download Models
+
+The pretrained StyleSDF model can downloaded via [StyleSDF Repo](https://github.com/royorel/StyleSDF)
+The pre-trained hypernetworks of several example styles can be downloaded via [Google Drive](https://windlikestone.github.io/HyperStyle3D-website/).
+For training, please also download other checkpoints from [Google Drive](https://windlikestone.github.io/HyperStyle3D-website/).
+Put the downloaded checkpoints under ```model_zoo``` folder for inference. The checkpoints directory layout should be
+
+    HyperStyle3D
+    ├── model_zoo
+    │         └── 79999_iter.pth
+    │         └── RN50.pt
+    │         └── ViT-B-16.pt
+    │         └── ViT-B-32.pt
+    │         └── model_ir_se50.pth
+    │         └── ffhq1024x1024.pt
+    │         └── ...
+    ├── ZSSGAN
+    │        └── model
+    │                 └── stylesdf_hyper_style_model.pt
+    └── ...
+
+
+# Inference
+
+In this section, we present an example to generate stylized results via pre-trained StyleSDF and hypernetworks.
 
 ```
-conda create -n item3d python=3.9
-conda activate item3d
-pip install torch==1.12.1+cu113 torchvision==0.13.1+cu113 -f https://download.pytorch.org/whl/torch_stable.html
-pip install ninja imageio PyOpenGL glfw xatlas gdown
-pip install git+https://github.com/NVlabs/nvdiffrast/
-pip install --global-option="--no-networks" git+https://github.com/NVlabs/tiny-cuda-nn#subdirectory=bindings/torch
-imageio_download_bin freeimage
-pip install -r requirements.txt
+cd ZSSGAN
+bash generate_SDF.sh
+bash render_video_SDF_text.sh
 ```
 
-# Demo
+# Train
 
-In this section, we present an example to edting 3D model. First, generate the mlp texture.
-
-```
-sh run/texture.sh
-```
-
-Then, edit 3D model's texuture.
-
-```
-sh run/direction_edit.sh
+```bash
+cd ZSSGAN
+bash train_stylesdf.sh
 ```
 
 # Acknowledgement
-Thanks to [NVdiffrec](https://github.com/NVlabs/nvdiffrec), [Stable-DreamFusion](https://github.com/ashawkey/stable-dreamfusion) and [Fantasia3D](https://github.com/Gorilla-Lab-SCUT/Fantasia3D), our code is partially borrowing from them.
+Thanks to [StyleSDF](https://github.com/royorel/StyleSDF), [StyleGAN-NADA](https://github.com/rinongal/StyleGAN-nada) and [E3DGE](https://github.com/NIRVANALAN/CVPR23-E3DGE), our code is partially borrowing from them.
 
-# Citation
-
+## :handshake: Citation
 If you find our work useful, please consider citing:
 ```
 @ARTICLE{10542240,
