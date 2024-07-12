@@ -12,8 +12,8 @@
 
 # Introduction
 
-This repository contains the official implementation of Directional Texture Editing for 3D Models(ITEM3D).
-Our model enables style transfer, attribute editing, shape deformation, and their overlying manipulations under the guidance of text prompts, while preserving 3D consistency. More detailed introduction can be viewed on our [Project Page](https://shengqiliu1.github.io/ITEM3D/).
+This repository contains the official implementation of HyperStyle3D: Text-Guided 3D Portrait Stylization via Hypernetworks.
+Our model enables style transfer, attribute editing, shape deformation, and their overlying manipulations under the guidance of text prompts, while preserving 3D consistency. A more detailed introduction can be viewed on our [Project Page](https://windlikestone.github.io/HyperStyle3D-website/).
 
 ## :desktop_computer: Requirements
 
