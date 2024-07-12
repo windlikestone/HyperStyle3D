@@ -62,7 +62,7 @@ sh run/direction_edit.sh
 ```
 
 # Acknowledgement
-Thanks to [NVdiffrec](https://github.com/NVlabs/nvdiffrec), [Stable-DreamFusion](https://github.com/ashawkey/stable-dreamfusion) and [Fantasia3D](https://github.com/Gorilla-Lab-SCUT/Fantasia3D), our code is partially borrowing from them.
+Thanks to [StyleSDF](https://github.com/royorel/StyleSDF), [StyleGAN-NADA](https://github.com/rinongal/StyleGAN-nada) and [E3DGE](https://github.com/NIRVANALAN/CVPR23-E3DGE), our code is partially borrowing from them.
 
 ## :handshake: Citation
 If you find our work useful, please consider citing:
