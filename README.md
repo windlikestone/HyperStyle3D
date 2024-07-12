@@ -13,14 +13,12 @@
 # Introduction
 
 This repository contains the official implementation of Directional Texture Editing for 3D Models(ITEM3D).
-Our ITEM3D model presents an efficient solution to the challenging task of texture editing for 3D models.
-By leveraging the knowledge from diffusion models, ITEM3D is capable to optimize the texture and environment map under the guidance of text prompts. More results can be viewed on our [Project Page](https://shengqiliu1.github.io/ITEM3D/).
+Our model enables style transfer, attribute editing, shape deformation, and their overlying manipulations under the guidance of text prompts, while preserving 3D consistency. More detailed introduction can be viewed on our [Project Page](https://shengqiliu1.github.io/ITEM3D/).
 
 ## :desktop_computer: Requirements
 
 NVIDIA GPUs are required for this project.
-We conduct all the training on NVIDIA V100-32GiB (ShapeNet, FFHQ) and NVIDIA A100-80GiB (Objaverse). 
-We have test the inference codes on NVIDIA V100.
+We conduct all the training on NVIDIA RTX 3090-24GiB and NVIDIA RTX A6000-48GiB. 
 We recommend using anaconda to manage the python environments.
 
 The environment can be created via ```conda env create -f environment.yml```, and activated via ```conda activate hyperstyle3d```.
