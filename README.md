@@ -16,19 +16,45 @@ This repository contains the official implementation of Directional Texture Edit
 Our ITEM3D model presents an efficient solution to the challenging task of texture editing for 3D models.
 By leveraging the knowledge from diffusion models, ITEM3D is capable to optimize the texture and environment map under the guidance of text prompts. More results can be viewed on our [Project Page](https://shengqiliu1.github.io/ITEM3D/).
 
-# Installation
+## :desktop_computer: Requirements
 
-Create the environment by conda.
+NVIDIA GPUs are required for this project.
+We conduct all the training on NVIDIA V100-32GiB (ShapeNet, FFHQ) and NVIDIA A100-80GiB (Objaverse). 
+We have test the inference codes on NVIDIA V100.
+We recommend using anaconda to manage the python environments.
+
+The environment can be created via ```conda env create -f environment_ln3diff.yml```, and activated via ```conda activate ln3diff```.
+If you want to reuse your own PyTorch environment, install the following packages in your environment:
 
 ```
-conda create -n item3d python=3.9
-conda activate item3d
-pip install torch==1.12.1+cu113 torchvision==0.13.1+cu113 -f https://download.pytorch.org/whl/torch_stable.html
-pip install ninja imageio PyOpenGL glfw xatlas gdown
-pip install git+https://github.com/NVlabs/nvdiffrast/
-pip install --global-option="--no-networks" git+https://github.com/NVlabs/tiny-cuda-nn#subdirectory=bindings/torch
-imageio_download_bin freeimage
-pip install -r requirements.txt
+# first, check whether you have installed pytorch (>=2.0) and xformer.
+conda install -c conda-forge openexr-python git
+pip install openexr lpips imageio kornia opencv-python tensorboard tqdm timm ffmpeg einops beartype imageio[ffmpeg] blobfile ninja lmdb webdataset opencv-python click torchdiffeq transformers
+pip install git+https://github.com/nupurkmr9/vision-aided-gan
+```
+
+## :running_woman: Inference
+
+### Download Models
+
+The pretrained stage-1 VAE and stage-2 LDM can be downloaded via [OneDrive](https://entuedu-my.sharepoint.com/:f:/g/personal/yushi001_e_ntu_edu_sg/ErdRV9hCYvlBioObT1v_LZ4Bnwye3sv6p5qiVZPNhI9coQ?e=nJgp8t).
+
+Put the downloaded checkpoints under ```checkpoints``` folder for inference. The checkpoints directory layout should be
+
+    checkpoints
+    ├── ffhq
+    │         └── model_joint_denoise_rec_model1580000.pt
+    ├── objaverse
+    │        ├── model_rec1680000.pt
+    │        └── model_joint_denoise_rec_model2310000.pt
+    ├── shapenet
+    │        └── car
+    │                 └── model_joint_denoise_rec_model1580000.pt
+    │        └── chair
+    │                 └── model_joint_denoise_rec_model2030000.pt
+    │        └── plane
+    │                 └── model_joint_denoise_rec_model770000.pt
+    └── ...
 ```
 
 # Demo
