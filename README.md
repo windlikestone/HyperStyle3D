@@ -27,23 +27,23 @@ The environment can be created via ```conda env create -f environment.yml```, an
 
 ### Download Models
 
-The pretrained stage-1 VAE and stage-2 LDM can be downloaded via [OneDrive](https://entuedu-my.sharepoint.com/:f:/g/personal/yushi001_e_ntu_edu_sg/ErdRV9hCYvlBioObT1v_LZ4Bnwye3sv6p5qiVZPNhI9coQ?e=nJgp8t).
+The pretrained StyleSDF model can downloaded via [StyleSDF Repo](https://github.com/royorel/StyleSDF)
+The pre-trained hypernetworks of several example styles can be downloaded via [Google Drive](https://windlikestone.github.io/HyperStyle3D-website/).
+For training, please also download other checkpoints from [Google Drive](https://windlikestone.github.io/HyperStyle3D-website/).
+Put the downloaded checkpoints under ```model_zoo``` folder for inference. The checkpoints directory layout should be
 
-Put the downloaded checkpoints under ```checkpoints``` folder for inference. The checkpoints directory layout should be
-
-    checkpoints
-    ├── ffhq
-    │         └── model_joint_denoise_rec_model1580000.pt
-    ├── objaverse
-    │        ├── model_rec1680000.pt
-    │        └── model_joint_denoise_rec_model2310000.pt
-    ├── shapenet
-    │        └── car
-    │                 └── model_joint_denoise_rec_model1580000.pt
-    │        └── chair
-    │                 └── model_joint_denoise_rec_model2030000.pt
-    │        └── plane
-    │                 └── model_joint_denoise_rec_model770000.pt
+    HyperStyle3D
+    ├── model_zoo
+    │         └── 79999_iter.pth
+    │         └── RN50.pt
+    │         └── ViT-B-16.pt
+    │         └── ViT-B-32.pt
+    │         └── model_ir_se50.pth
+    │         └── ffhq1024x1024.pt
+    │         └── ...
+    ├── ZSSGAN
+    │        └── model
+    │                 └── stylesdf_hyper_style_model.pt
     └── ...
 
 
